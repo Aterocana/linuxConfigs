@@ -52,6 +52,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+#Per avere l'autocompletamento di git
+if [ -f ~/.git-completion.bash ]; then
+	source ~/.git-completion.bash
+fi
+
+
 #Per ottenere il prompt colorato
 
 if [[ ${EUID} == 0 ]] ; then

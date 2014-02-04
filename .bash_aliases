@@ -1,6 +1,6 @@
 # pacman
 alias install='yaourt -S' #'sudo pacman -S'
-alias uninstall='yaourt -Rs' #'sudo pacman -Rs'
+alias uninstall='yaourt -Rns' #'sudo pacman -Rns'
 alias update='yaourt -Syua' #'sudo pacman -Syu'
 
 #utilities
