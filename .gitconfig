@@ -3,3 +3,5 @@
 	email = dominicimaurizio@gmail.com
 [core]
 	editor = nano
+[push]
+	default = matching
