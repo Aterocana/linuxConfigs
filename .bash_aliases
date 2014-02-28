@@ -4,7 +4,7 @@ alias install-nc='yaourt -S --noconfirm'
 alias uninstall='yaourt -Rns' #'sudo pacman -Rns'
 alias update='yaourt -Suya' #'sudo pacman -Syu'
 alias update-nc='yaourt -Suya --noconfirm'
-alias autoremove='sudo pacman -Rscn $(pacman -Qtdq)'
+alias autoremove='if [[ ! -n $(pacman -Qdt) ]]; then echo "Nessun pacchetto da rimuovere"; else sudo pacman -Rns $(pacman -Qdtq); fi'
 
 #utilities
 alias unzip='tar -xzf'
