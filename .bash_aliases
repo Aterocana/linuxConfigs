@@ -3,6 +3,7 @@ alias install='sudo apt-get install'
 alias uninstall='sudo apt-get purge'
 alias update='sudo apt-get update && sudo apt-get upgrade'
 alias autoremove='sudo apt-get autoremove'
+alias update-node='sudo wget http://node-arm.herokuapp.com/node_latest_armhf.deb && sudo dpkg -i node_latest_armhf.deb && rm -f node_latest_armhf.deb'
 
 # Utilities
 alias ls='ls --color=auto'
