@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=xbindkeys
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=XBindKeys
+Name=XBindKeys
+Comment[en_US]=xbindkeys autostart command
+Comment=xbindkeys autostart command

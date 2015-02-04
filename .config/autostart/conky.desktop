@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=conky -c /home/mauri/.conkycolors/conkyrc
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=ConkyColors
+Name=ConkyColors
+Comment[en_US]=Conky Colors Script
+Comment=Conky Colors Script
