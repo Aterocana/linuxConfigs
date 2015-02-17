@@ -14,6 +14,7 @@ alias ls='ls --color=auto'
 alias lh='ll -a'
 alias c='clear'
 alias proc='ps -aux | grep'
+alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
 # Services
 alias lamp='sudo systemctl start httpd'
