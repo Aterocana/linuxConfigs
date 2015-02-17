@@ -1,13 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="frisk"
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -46,7 +39,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git extract)
 
 # User configuration
 
@@ -82,23 +75,6 @@ fi
 
 
 #MIE AGGIUNTE
-source $HOME/.aliases
-
-#ALT+S ANTEPONE "sudo" A SINISTRA NEL COMANDO
-insert_sudo () { zle beginning-of-line; zle -U "sudo " }
-zle -N insert-sudo insert_sudo
-bindkey "^[s" insert-sudo
-
-#TEMA
-PROMPT=$'
-%{$fg[green]%}%/%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[white]%}[%n@%m]%{$reset_color%} %{$fg[white]%}[%T]%{$reset_color%}
-%{$fg_bold[black]%}>%{$reset_color%} '
-
-PROMPT2="%{$fg_blod[black]%}%_> %{$reset_color%}"
-
-GIT_CB="git::"
-ZSH_THEME_SCM_PROMPT_PREFIX="%{$fg[green]%}["
-ZSH_THEME_GIT_PROMPT_PREFIX=$ZSH_THEME_SCM_PROMPT_PREFIX$GIT_CB
-ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}*%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
+source $HOME/.zsh/aliases.zsh
+source $HOME/.zsh/functions.zsh
+source $HOME/.zsh/theme.zsh
