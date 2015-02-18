@@ -76,5 +76,6 @@ fi
 
 #MIE AGGIUNTE
 source $HOME/.zsh/aliases.zsh
+source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/theme.zsh
