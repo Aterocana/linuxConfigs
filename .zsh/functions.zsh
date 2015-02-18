@@ -1,3 +1,5 @@
+autoload -U zmv
+
 function path() {
   echo $PATH | tr ":" "\n" | \
     awk "{ sub(\"/usr\",   \"$fg_no_bold[green]/usr$reset_color\"); \
