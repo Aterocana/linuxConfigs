@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Remember to copy the ssh.zsh file in your $HOME/.zsh/ directory"
 echo "Copying configuration files"
 dest="~/"
 find . -type f -print0 | fgrep -zvf ignore.txt | grep -zv $0 | xargs -0 | sed -e "s/ /\n/g" | sort
