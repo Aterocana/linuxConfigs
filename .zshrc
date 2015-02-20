@@ -59,7 +59,7 @@ else
 fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+#export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -78,4 +78,5 @@ fi
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/functions.zsh
+source $HOME/.zsh/ssh.zsh
 source $HOME/.zsh/theme.zsh
