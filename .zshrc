@@ -80,3 +80,6 @@ source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/ssh.zsh
 source $HOME/.zsh/theme.zsh
+
+# Syntax Highlighting: necessita del pacchetto zsh-syntax-highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

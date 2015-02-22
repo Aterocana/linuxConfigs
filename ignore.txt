@@ -1,4 +1,5 @@
 .git/
+.gitignore
 ignore.txt
 README.md
 conky-colors-configuration

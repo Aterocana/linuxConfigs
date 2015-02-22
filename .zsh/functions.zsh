@@ -1,4 +1,5 @@
 autoload -U zmv
+autoload -U modify-current-argument #necessaria per expand-snippet
 
 function path() {
   echo $PATH | tr ":" "\n" | \
@@ -14,6 +15,22 @@ function insert_sudo () {
 	zle beginning-of-line; zle -U "sudo " 
 }
 
-#ALT+S ANTEPONE "sudo" A SINISTRA NEL COMANDO
+# ALT+S ANTEPONE "sudo" A SINISTRA NEL COMANDO
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
+
+# CTRL+J ESPANDE I PERCORSI INDICATI IN SNIPPETS
+typeset -A snippets
+
+snippets=(
+  doc /home/mauri/Documents
+  d /home/mauri/Downloads
+  p /home/mauri/Documents/Programming
+)
+
+expand-snippet() {
+  modify-current-argument '${snippets[${ARG}]}'
+}
+zle -N expand-snippet
+
+bindkey "^j" expand-snippet
