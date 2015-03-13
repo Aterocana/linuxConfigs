@@ -1,5 +1,3 @@
-#ZSH_THEME="robbyrussell"
-
 PROMPT=$'
 %{$fg[green]%}%/%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[white]%}[%n@%m]%{$reset_color%} %{$fg[white]%}[%T]%{$reset_color%}
 %{$fg_bold[black]%}>%{$reset_color%} '
