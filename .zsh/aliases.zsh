@@ -10,7 +10,8 @@ alias clean-cache='sudo pacman -Scc'
 
 # Utilities
 alias unzip='extract'
-alias lh='ll -a'
+alias ll='ls -lh'
+alias lh='ll -ah'
 alias c='clear'
 alias proc='ps -aux | grep'
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
