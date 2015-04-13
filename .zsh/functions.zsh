@@ -23,9 +23,9 @@ bindkey "^[s" insert-sudo
 typeset -A snippets
 
 snippets=(
-  doc /home/mauri/Documents
-  d /home/mauri/Downloads
-  p /home/mauri/Documents/Programming
+  doc /home/mauri/Documents/
+  d /home/mauri/Downloads/
+  p /home/mauri/Documents/Programming/
 )
 
 expand-snippet() {
