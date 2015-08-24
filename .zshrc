@@ -73,8 +73,11 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 #MIE AGGIUNTE
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/functions.zsh
