@@ -24,3 +24,6 @@ alias mongodb='sudo systemctl start mongodb'
 alias mongodb-stop='sudo systemctl stop mongodb'
 alias mongodb-restart='sudo systemctl restart mongodb'
 alias lemp='sudo systemctl start mysqld && sudo systemctl start php-fpm && sudo systemctl start nginx'
+alias lemp-restart='sudo systemctl restart mysqld && sudo systemctl restart php-fpm && sudo systemctl restart 
+nginx'
+alias lemp-stop='sudo systemctl stop mysqld && sudo systemctl stop php-fpm && sudo systemctl stop nginx'
