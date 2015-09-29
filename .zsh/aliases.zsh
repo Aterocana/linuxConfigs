@@ -27,3 +27,6 @@ alias lemp='sudo systemctl start mysqld && sudo systemctl start php-fpm && sudo 
 alias lemp-restart='sudo systemctl restart mysqld && sudo systemctl restart php-fpm && sudo systemctl restart 
 nginx'
 alias lemp-stop='sudo systemctl stop mysqld && sudo systemctl stop php-fpm && sudo systemctl stop nginx'
+alias lamp='sudo systemctl start mysqld && sudo systemctl start httpd'
+alias lamp-restart='sudo systemctl restart mysqld && sudo systemctl restart httpd'
+alias lamp-stop='sudo systemctl stop mysqld && sudo systemctl stop httpd'
