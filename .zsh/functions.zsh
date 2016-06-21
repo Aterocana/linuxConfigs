@@ -34,3 +34,4 @@ expand-snippet() {
 zle -N expand-snippet
 
 bindkey "^j" expand-snippet
+bindkey -M emacs '^[[3;5~' kill-word
