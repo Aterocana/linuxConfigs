@@ -17,16 +17,8 @@ alias proc='ps -aux | grep'
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
 # Services
-alias db='sudo systemctl start mysqld'
-alias db-stop='sudo systemctl stop mysqld'
-alias db-restart='sudo systemctl restart mysqld'
 alias mongodb='sudo systemctl start mongodb'
 alias mongodb-stop='sudo systemctl stop mongodb'
 alias mongodb-restart='sudo systemctl restart mongodb'
-alias lemp='sudo systemctl start mysqld && sudo systemctl start php-fpm && sudo systemctl start nginx'
-alias lemp-restart='sudo systemctl restart mysqld && sudo systemctl restart php-fpm && sudo systemctl restart 
-nginx'
-alias lemp-stop='sudo systemctl stop mysqld && sudo systemctl stop php-fpm && sudo systemctl stop nginx'
-alias lamp='sudo systemctl start mysqld && sudo systemctl start httpd'
-alias lamp-restart='sudo systemctl restart mysqld && sudo systemctl restart httpd'
-alias lamp-stop='sudo systemctl stop mysqld && sudo systemctl stop httpd'
+alias docker-start='sudo systemctl start docker'
+alias docker-stop='sudo systemctl stop docker'

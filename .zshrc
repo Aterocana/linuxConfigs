@@ -86,3 +86,6 @@ source $HOME/.zsh/theme.zsh
 
 # Syntax Highlighting: necessita del pacchetto zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Esp8266 toolchain path
+export PATH=$PATH:/opt/esp-open-sdk/xtensa-lx106-elf/bin
