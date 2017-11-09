@@ -87,5 +87,12 @@ source $HOME/.zsh/theme.zsh
 # Syntax Highlighting: necessita del pacchetto zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+fortune -ca | cowsay -W80 -y -f dragon-and-cow
+
 # Esp8266 toolchain path
 export PATH=$PATH:/opt/esp-open-sdk/xtensa-lx106-elf/bin
+# ESP32 toolchain path
+export PATH=$PATH:/opt/esp32/xtensa-esp32-elf/bin:/opt/esp32/esp-idf
+# Nodemcu-uploader
+export PATH=$PATH:/opt/nodemcu-uploader
+source /usr/share/nvm/init-nvm.sh
