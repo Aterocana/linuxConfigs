@@ -93,6 +93,7 @@ fortune -ca | cowsay -W80 -y -f satanic || echo "install cowsay and fortune-mod"
 export PATH=$PATH:/opt/esp-open-sdk/xtensa-lx106-elf/bin
 # ESP32 toolchain path
 export PATH=$PATH:/opt/esp32/xtensa-esp32-elf/bin:/opt/esp32/esp-idf
+export IDF_PATH=/opt/esp32/esp-idf
 # Nodemcu-uploader
 export PATH=$PATH:/opt/nodemcu-uploader
 # NVM
