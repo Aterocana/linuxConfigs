@@ -87,6 +87,9 @@ source $HOME/.zsh/theme.zsh
 # Syntax Highlighting: necessita del pacchetto zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 fortune -ca | cowsay -W80 -y -f satanic || echo "install cowsay and fortune-mod"
 
 # Esp8266 toolchain path
