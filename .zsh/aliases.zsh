@@ -15,10 +15,9 @@ alias lh='ll -ah'
 alias c='clear'
 alias proc='ps -aux | grep'
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+alias set-python2="sudo unlink /usr/bin/python && sudo ln -s /usr/bin/python2 /usr/bin/python"
+alias set-python3="sudo unlink /usr/bin/python && sudo ln -s /usr/bin/python3 /usr/bin/python"
 
 # Services
-alias mongodb='sudo systemctl start mongodb'
-alias mongodb-stop='sudo systemctl stop mongodb'
-alias mongodb-restart='sudo systemctl restart mongodb'
-alias docker-start='sudo systemctl start docker'
-alias docker-stop='sudo systemctl stop docker'
+alias lamp='sudo systemctl start mariadb && sudo systemctl start httpd'
+alias lamp-stop='sudo systemctl stop mariadb && sudo systemctl stop httpd'
