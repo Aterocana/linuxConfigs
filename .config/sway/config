@@ -75,6 +75,9 @@ bindsym $mod+Return exec $term
 # start a browser
 bindsym $mod+Shift+b exec $browser
 
+# clipmenu
+byndsym $mod+c clipmenu
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
