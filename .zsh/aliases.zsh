@@ -1,10 +1,10 @@
 # Pacman
-alias install='yaourt -S'
+alias install='yay -S'
 #alias install='sudo pacman -S'
-alias install-nc='yaourt -S --noconfirm'
-alias uninstall='yaourt -Rns' #'sudo pacman -Rns'
-alias update='yaourt -Suya' #'sudo pacman -Syu'
-alias update-nc='yaourt -Suya --noconfirm'
+alias install-nc='yay -S --noconfirm'
+alias uninstall='yay -Rns' #'sudo pacman -Rns'
+alias update='sudo pacman -Syu && yay -Suya'
+alias update-nc='sudo pacman -Syu --noconfirm && yay -Suya --noconfirm'
 alias autoremove='if [[ ! -n $(pacman -Qdt) ]]; then echo "Nessun pacchetto da rimuovere"; else sudo pacman -Rns $(pacman -Qdtq); fi'
 alias clean-cache='sudo pacman -Scc'
 
