@@ -90,7 +90,13 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-fortune -ca | cowsay -W80 -y -f satanic || echo "install cowsay and fortune-mod"
+# SSH Agent
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
 
 # Esp8266 toolchain path
 export PATH=$PATH:/opt/esp-open-sdk/xtensa-lx106-elf/bin
@@ -99,5 +105,3 @@ export PATH=$PATH:/opt/esp32/xtensa-esp32-elf/bin:/opt/esp32/esp-idf
 export IDF_PATH=/opt/esp32/esp-idf
 # Nodemcu-uploader
 export PATH=$PATH:/opt/nodemcu-uploader
-# NVM
-source /usr/share/nvm/init-nvm.sh
