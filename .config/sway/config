@@ -4,9 +4,6 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-### Variables
-exec --no-startup-id xrdb ~/.Xresources
-#
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
@@ -16,11 +13,13 @@ set $down j
 set $up k
 set $right l
 
+exec clipmenud
+
 # Favourite applications
 set $term xfce4-terminal -e tmux
 set $browser chromium
 # Note: it's recommended that you pass the final command to sway
-set $menu dmenu_run -i -fn 'monaco-9:bold:pixelsize=14' -nb '#585858' -nf '#FFFFFF' -sf '#000000' -sb '#AEFB62' 
+set $menu dmenu_run -i -fn 'monaco-9:bold:pixelsize=14' -nb '#585858' -nf '#FFFFFF' -sf '#000000' -sb '#AEFB62'
 
 ### Output configuration
 #
@@ -42,19 +41,27 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     repeat_delay 500
     repeat_rate 50
 }
+# input "1:1:AT_Translated_Set_2_keyboard" {
+#     xkb_layout it
+#     xkb_variant nodeadkeys
+#     xkb_model dell101
+#     repeat_delay 500
+#     repeat_rate 50
+# }
 
-output eDP-1 scale 2
+output DP-1 pos 0 0 scale 1
+output eDP-1 pos 1920 0 scale 2
 
-#:::::::::disable_window_borders::::::::                                                                  
-for_window [class="^.*"] border pixel 0                                                                   
-new_window pixel 1                                                                                        
-new_float  normal   
-#:::::i3_ gaps::::::::::::::                                                                              
-set $default_gaps_inner 4                                                                                
-set $default_gaps_outer 4                                                                                 
-gaps inner $default_gaps_inner                                                                            
-gaps outer $default_gaps_outer                                                                            
-smart_gaps on                                                                                             
+#:::::::::disable_window_borders::::::::
+for_window [class="^.*"] border pixel 0
+new_window pixel 1
+new_float  normal
+#:::::i3_ gaps::::::::::::::
+set $default_gaps_inner 4
+set $default_gaps_outer 4
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+smart_gaps on
 bindsym $mod+Shift+s sticky toggle
 
 # enable floating mode for all Specified windows
@@ -75,14 +82,18 @@ bindsym $mod+Return exec $term
 # start a browser
 bindsym $mod+Shift+b exec $browser
 
-# clipmenu
-byndsym $mod+c clipmenu
+# start clipboard
+bindsym $mod+c exec clipmenu
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start your launcher
 bindsym $mod+d exec $menu
+
+# take a screenshot
+bindsym Print exec grim $(xdg-user-dir PICTURES)/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')
+bindsym Shift+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -252,8 +263,8 @@ bar {
     position top
     status_command i3status
     font Monaco,Bold 11px
-    # separator_symbol "   "
-    separator_symbol "   "
+    separator_symbol ""
+    # separator_symbol " "
 	mode dock
     # status_command i3blocks
     colors {
@@ -262,7 +273,7 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
         focused_workspace	#585858	#585858	#66FF66
         active_workspace	#777F8B	#777F8B	#ecedee
-        urgent_workspace	#DEDFE3	#DEDFE3	#767E8A   
+        urgent_workspace	#DEDFE3	#DEDFE3	#767E8A
     }
 }
 

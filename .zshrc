@@ -39,7 +39,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract)
+plugins=(git extract web-search)
 
 # User configuration
 
@@ -75,8 +75,8 @@ fi
 
 #MIE AGGIUNTE
 # If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+# [[ $- != *i* ]] && return
+# [[ -z "$TMUX" ]] && exec tmux
 
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/completion.zsh
@@ -90,18 +90,11 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# SSH Agent
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing
-fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<~/.ssh-agent-thing)"
-fi
-
 # Esp8266 toolchain path
 export PATH=$PATH:/opt/esp-open-sdk/xtensa-lx106-elf/bin
 # ESP32 toolchain path
 export PATH=$PATH:/opt/esp32/xtensa-esp32-elf/bin:/opt/esp32/esp-idf
 export IDF_PATH=/opt/esp32/esp-idf
-# Nodemcu-uploader
-export PATH=$PATH:/opt/nodemcu-uploader
+
+# GO
+export PATH=$PATH:/usr/lib/go/bin
