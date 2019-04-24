@@ -267,10 +267,10 @@ bar {
     # position top
     # status_command i3status
     swaybar_command waybar
-    font Monaco,Bold 11px
+    font Monaco,Bold 10px
     separator_symbol ""
     # separator_symbol " "
-	mode dock
+	# mode dock
     # status_command i3blocks
     colors {
         statusline #ffffff
