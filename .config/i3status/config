@@ -44,13 +44,13 @@ ethernet enp1s0 {
 	format_down = ""
 }
 battery 0 {
-	format = "<span color='#FEFF72'> %status: %percentage </span>"
+	format = "<span color='#FEFF72'> %status:%percentage </span>"
 	format_down = "No battery"
 	#'#fa4c7e'
-	status_chr = "<span color='#00e64d'>[] </span> "
-	status_bat = "<span color='#8080ff' >[] </span>"
+	status_chr = "<span color='#00e64d'>[]</span> "
+	status_bat = "<span color='#8080ff' >[]</span>"
 	status_unk = "[?ukwn] "
-	status_full = "<span color='#66FF99'> [] </span>"
+	status_full = "<span color='#66FF99'>[]</span>"
 	path = "/sys/class/power_supply/BAT%d/uevent"
 	low_threshold = 20
 #	last_full_capacity = true
