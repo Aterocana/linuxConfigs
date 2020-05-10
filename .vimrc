@@ -6,6 +6,7 @@ call vundle#begin()
 Plugin 'morhetz/gruvbox'
 Plugin 'preservim/nerdtree'
 Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
@@ -61,6 +62,17 @@ let g:airline_theme='dark'
 " Rust settings
 let g:rustfmt_autosave = 1
 let g:rust_clip_command = 'xclip -selection clipboard'
+set hidden
+let g:racer_experimental_completer = 1
+let g:racer_insert_paren = 1
+augroup Racer
+    autocmd!
+    autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
+    autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
+    autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
+    autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
+    autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+augroup END
 
 " Synstastic
 set statusline+=%#warningmsg#
@@ -96,7 +108,7 @@ call NERDTreeHighlightFile('rs', 'red', 'none', 'red', '#151515')
 
 
 " Key maps
-
+nmap 
 nmap <F8> :TagbarToggle<CR> 
 map <F2> :NERDTreeToggle<CR>
 " Tab navigation
