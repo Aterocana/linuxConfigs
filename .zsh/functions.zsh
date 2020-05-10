@@ -26,7 +26,8 @@ snippets=(
   doc /home/mauri/Documents/
   d /home/mauri/Downloads/
   p /home/mauri/Documents/Programming/
-  go /home/mauri/mygo/src/
+  go /home/mauri/Documents/Programming/
+  rust /home/mauri/Documents/Programming/rust
 )
 
 expand-snippet() {

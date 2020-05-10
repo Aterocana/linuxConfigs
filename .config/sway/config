@@ -18,7 +18,7 @@ exec --no-startup-id mako &> /tmp/mako.log
 exec clipmenud
 
 # Favourite applications
-set $term xfce4-terminal -e tmux
+set $term alacritty -e tmux
 set $browser chromium
 # Note: it's recommended that you pass the final command to sway
 set $menu dmenu_run -i -fn 'monaco-9:bold:pixelsize=14' -nb '#585858' -nf '#FFFFFF' -sf '#000000' -sb '#AEFB62'
@@ -277,6 +277,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
 bar {
     position top
     status_command i3status
+    # status_command i3status-rs
     # swaybar_command waybar
     font Monaco,Bold 10px
     separator_symbol ""

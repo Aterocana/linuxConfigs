@@ -39,7 +39,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract web-search)
+plugins=(git extract web-search cargo golang)
 
 # User configuration
 
@@ -53,9 +53,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nano'
+  export EDITOR='vim'
 else
-  export EDITOR='nano'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -74,6 +74,17 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #MIE AGGIUNTE
+case ${TERM} in
+
+  xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
+     PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+
+    ;;
+  screen*)
+    PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+    ;;
+esac
+
 # If not running interactively, do not do anything
 # [[ $- != *i* ]] && return
 # [[ -z "$TMUX" ]] && exec tmux
@@ -97,4 +108,11 @@ export PATH=$PATH:/opt/esp32/xtensa-esp32-elf/bin:/opt/esp32/esp-idf
 export IDF_PATH=/opt/esp32/esp-idf
 
 # GO
-export PATH=$PATH:/usr/lib/go/bin
+export PATH=$PATH:/usr/lib/go/bin:$HOME/go/bin
+
+# RUST
+export PATH=$PATH:$HOME/.cargo/bin
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# NVM (Node.js)
+source /usr/share/nvm/init-nvm.sh

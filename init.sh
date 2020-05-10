@@ -10,3 +10,5 @@ echo #new line
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	find . -type f -print0 | fgrep -zvf ignore.txt | grep -zv $0 | xargs -0 cp --parents -Rt $dest
 fi
+mkdir ~/.vim/bundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
