@@ -39,7 +39,14 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract web-search cargo golang)
+plugins=(
+	git 
+	extract 
+	web-search 
+	cargo 
+	golang
+	docker
+)
 
 # User configuration
 
@@ -94,25 +101,10 @@ source $HOME/.zsh/completion.zsh
 source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/ssh.zsh
 source $HOME/.zsh/theme.zsh
+source $HOME/.zsh/env.zsh
 
 # Syntax Highlighting: necessita del pacchetto zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Esp8266 toolchain path
-export PATH=$PATH:/opt/esp-open-sdk/xtensa-lx106-elf/bin
-# ESP32 toolchain path
-export PATH=$PATH:/opt/esp32/xtensa-esp32-elf/bin:/opt/esp32/esp-idf
-export IDF_PATH=/opt/esp32/esp-idf
-
-# GO
-export PATH=$PATH:/usr/lib/go/bin:$HOME/go/bin
-
-# RUST
-export PATH=$PATH:$HOME/.cargo/bin
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-# NVM (Node.js)
-source /usr/share/nvm/init-nvm.sh
