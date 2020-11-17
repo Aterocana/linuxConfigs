@@ -102,6 +102,7 @@ source $HOME/.zsh/functions.zsh
 source $HOME/.zsh/ssh.zsh
 source $HOME/.zsh/theme.zsh
 source $HOME/.zsh/env.zsh
+source $HOME/.zsh/kubectl_completions.zsh
 
 # Syntax Highlighting: necessita del pacchetto zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
