@@ -4,9 +4,6 @@ name = "gruvbox-dark"
 [icons]
 name = "awesome"
 
-interval = 1
-format = "{1m} {5m} {15m}"
-
 [[block]]
 block = "pacman"
 interval = 600
@@ -16,32 +13,56 @@ format_up_to_date = "updated"
 critical_updates_regex = "(linux |linux-lts|linux-zen)"
 
 [[block]]
+block = "weather"
+format = "{weather} ({location}) {temp}°"
+service = { name = "openweathermap", api_key = "70806b7de628c7601b9a78d7e4687c17", city_id = "3181631", units = "metric" }
+interval = 120
+
+[[block]]
+block = "cpu"
+interval = 3
+format = "{utilization}% {frequency}GHz"
+info = 50
+warning = 70
+critical = 90
+
+[[block]]
+block = "memory"
+format_mem = "{Mum}MB / ({Mup}%)"
+format_swap = "{SUm}MB / ({SUp}%)"
+display_type = "memory"
+icons = true
+clickable = true
+interval = 10
+warning_mem = 80
+warning_swap = 80
+critical_mem = 95
+critical_swap = 95
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+format = "{min}° min, {max}° max, {average}° avg"
+
+[[block]]
 block = "networkmanager"
 on_click = "networkmanager_dmenu"
 interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
 interface_name_include = []
 
 [[block]]
-block = "cpu"
-interval = 0.7
-
-[[block]]
-block = "memory"
-interval = 5
-info_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
-
-[[block]]
-block = "battery"
-interval = 10
-format = "{percentage}% {time}"
-
-[[block]]
 block = "sound"
+step_width = 1
+show_volume_when_muted = true
 on_click = "pavucontrol"
 
 [[block]]
-block = "time"
-interval = 60
-format = "%a %d/%m %R"
+block = "battery"
+driver = "upower"
+format = "{percentage}% {time}"
+
+[[block]]                                                                                                                                                                       
+block = "time"                                                                                                                                                                  
+interval = 60                                                                                                                                                                   
+

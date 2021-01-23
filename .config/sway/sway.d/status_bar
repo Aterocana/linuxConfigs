@@ -1,26 +1,16 @@
 bar {
-	position top
-	status_command i3status-rs
-	
+    position top
+    status_command i3status-rs
+
     colors {
         statusline #ffffff
-		#background #00000000
+        #background #00000000
         background #00000033
         inactive_workspace #585858 #585858 #ebdbb2
         focused_workspace   #262626 #262626 #98971a
         active_workspace    #777F8B #777F8B #ecedee
         urgent_workspace    #DEDFE3 #DEDFE3 #767E8A
     }
-	colors {
-	}
+    colors {
+    }
 }
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-#bar {
-#    position top
-#    status_command i3status
-#    font Monaco,Bold 10px
-#    separator_symbol ""
-#}
