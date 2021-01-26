@@ -15,7 +15,7 @@ critical_updates_regex = "(linux |linux-lts|linux-zen)"
 [[block]]
 block = "weather"
 format = "{weather} ({location}) {temp}°"
-service = { name = "openweathermap", api_key = "70806b7de628c7601b9a78d7e4687c17", city_id = "3181631", units = "metric" }
+service = { name = "openweathermap", api_key = "API_KEY", city_id = "CITY_ID", units = "metric" }
 interval = 120
 
 [[block]]
