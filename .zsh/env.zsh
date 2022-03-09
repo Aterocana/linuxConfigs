@@ -16,3 +16,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # NVM (Node.js)
 source /usr/share/nvm/init-nvm.sh
+
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null

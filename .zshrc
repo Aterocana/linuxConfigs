@@ -10,6 +10,10 @@ export ZSH=$HOME/.oh-my-zsh
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
+# pasting doesn't cause every single char to be pasted like it was typed.
+# zsh doesn't load so called "magic" plugins.
+DISABLE_MAGIC_FUNCTIONS="true"
+
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
