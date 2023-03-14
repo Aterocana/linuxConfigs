@@ -16,12 +16,16 @@ set $right l
 # Autostart
 exec --no-startup-id mako &> /tmp/mako.log
 exec clipmenud
+exec nextcloud
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+include ~/.config/sway/sway.d/themes
 
 # Favourite applications
 set $term alacritty -e tmux
 set $browser google-chrome-stable
 # Note: it's recommended that you pass the final command to sway
 set $menu wofi
+#set $menu nwg-drawer -fm nemo
 set $cmd dmenu_run -i -fn 'monaco-9:bold:pixelsize=14' -nb '#585858' -nf '#FFFFFF' -sf '#000000' -sb '#AEFB62'
 
 #
@@ -52,5 +56,6 @@ include ~/.config/sway/sway.d/inputs
 include ~/.config/sway/sway.d/windows
 include ~/.config/sway/sway.d/key_bindings
 include ~/.config/sway/sway.d/status_bar
+include ~/.config/sway/sway.d/ssh_keys
 
 include /etc/sway/config.d/*

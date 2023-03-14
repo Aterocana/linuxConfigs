@@ -1,38 +1,36 @@
 [theme]
-name = "gruvbox-dark"
+theme = "gruvbox-dark"
 
 [icons]
-name = "awesome"
+icons = "awesome6"
 
 [[block]]
 block = "pacman"
 interval = 600
-format = "{pacman} updates available"
-format_singular = "{pacman} update available"
+format = "$icon $pacman updates available"
+format_singular = "$icon $pacman update available"
 format_up_to_date = "updated"
 critical_updates_regex = "(linux |linux-lts|linux-zen)"
-
+ 
 [[block]]
 block = "weather"
-format = "{weather} ({location}) {temp}°"
-service = { name = "openweathermap", api_key = "API_KEY", city_id = "CITY_ID", units = "metric" }
+format = "$icon $weather ($location) $temp"
 interval = 120
+[block.service]
+name = "openweathermap"
+api_key = "70806b7de628c7601b9a78d7e4687c17"
+city_id = "3181631"
+units = "metric"
 
 [[block]]
 block = "cpu"
 interval = 3
-format = "{utilization}% {frequency}GHz"
-info = 50
-warning = 70
-critical = 90
-
+format = "$icon$utilization"
+ 
 [[block]]
 block = "memory"
-format_mem = "{Mum}MB / ({Mup}%)"
-format_swap = "{SUm}MB / ({SUp}%)"
-display_type = "memory"
-icons = true
-clickable = true
+format = "$icon$mem_avail.eng(prefix:M)/$mem_total.eng(prefix:M)($mem_total_used_percents.eng(w:2))"
+format_alt = "$icon_swap$swap_free.eng(w:3,u:B,p:M)/$swap_total.eng(w:3,u:B,p:M)($swap_used_percents.eng(w:2))"
 interval = 10
 warning_mem = 80
 warning_swap = 80
@@ -41,28 +39,39 @@ critical_swap = 95
 
 [[block]]
 block = "temperature"
-collapsed = false
 interval = 10
-format = "{min}° min, {max}° max, {average}° avg"
-
+format = "$icon $max"
+format_alt = "$icon $min min, $max max, $average avg"
+ 
 [[block]]
-block = "networkmanager"
-on_click = "networkmanager_dmenu"
-interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
-interface_name_include = []
-
+block = "net"
+format = "$icon {$signal_strength $ssid $frequency|}"
+[[block.click]]
+button = "left"
+cmd = "gnome-control-center"
+#interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+#interface_name_include = []
+ 
 [[block]]
 block = "sound"
 step_width = 1
-show_volume_when_muted = true
-on_click = "pavucontrol"
-
+format = "$output_name{ $volume|}"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+[block.mappings]
+"alsa_output.usb-Generic_USB_Audio_200901010001-00.HiFi__hw_Dock__sink" = "🔈"
+"bluez_sink.A0_DE_0F_22_76_72.a2dp_sink" = "🎧"
+"alsa_output.usb-Sony_Interactive_Entertainment_DualSense_Wireless_Controller-00.analog-surround-40" = " "
+# show_volume_when_muted = true
+# 
 [[block]]
 block = "battery"
 driver = "upower"
-format = "{percentage}% {time}"
-
+format = "$percentage $time"
+ 
 [[block]]                                                                                                                                                                       
 block = "time"                                                                                                                                                                  
-interval = 60                                                                                                                                                                   
-
+format = "$timestamp.datetime(f:'%H:%M:%S', l:it_IT)"
+interval = 1                                                                                                                                                                   
+ 

@@ -1,8 +1,9 @@
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/mauri/Pictures/00-wallpapers/wolf4.jpg fill
-
+#output * bg /home/mauri/Pictures/00-wallpapers/kyrie.jpg fill
+output * bg /home/mauri/Pictures/00-wallpapers/howling-wolf.png fill
 output "Sharp Corporation 0x143E 0x00000000" pos 0 0 scale 2
-output "Goldstar Company Ltd LG HDR 4K 0x0000CEEF" pos 1920 0 scale 1.5
+output "LG Electronics LG HDR 4K 0x0000CEEF" pos 1920 0 scale 1.5
+#output "Goldstar Company Ltd LG HDR 4K 0x0000CEEF" pos 1920 0 scale 1.5
 output "Dell Inc. DELL U2417H 5K9YD85HAG0L" pos 4480 0 scale 1 transform 90

@@ -1,0 +1,33 @@
+[[block]]
+block = "pacman"
+interval = 600
+format = "{pacman} updates available"
+format_singular = "{pacman} update available"
+format_up_to_date = "updated"
+critical_updates_regex = "(linux |linux-lts|linux-zen)"
+
+[[block]]
+block = "weather"
+format = "{weather} ({location}) {temp}"
+service = { name = "openweathermap", api_key = "70806b7de628c7601b9a78d7e4687c17", city_id = "3181631", units = "metric" }
+interval = 120
+
+[[block]]
+block = "cpu"
+interval = 3
+format = "{utilization} {frequency}"
+
+[[block]]
+block = "sound"
+step_width = 1
+show_volume_when_muted = true
+
+[[block]]
+block = "battery"
+driver = "upower"
+format = "{percentage} {time}"
+
+[[block]]                                                                                                                                                                       
+block = "time"                                                                                                                                                                  
+interval = 60                                                                                                                                                                   
+
